@@ -69,7 +69,7 @@ public class EmailGeneratorService {
         StringBuilder prompt = new StringBuilder();
         prompt.append("Generate a email reply for the following email content. The tone and style are as follows: ");
         if (emailRequest.getTone() != null && !emailRequest.getEmailContent().isEmpty()){
-            prompt.append("Use a ").append(emailRequest.getTone()).append(" tone");
+            prompt.append("Use a ").append(emailRequest.getTone()).append(" tone").append("Strict Instructions: I want the response in text format no json. Also there shouldn't be any Subject");
         }
         prompt.append("\n Original email: \n").append(emailRequest.getEmailContent());
         return prompt.toString();
